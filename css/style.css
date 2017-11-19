@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Roboto');
+
+* {
+  box-sizing: border-box; 
+}
+body {
+  font-family: Lato;
+  padding-top: 70px;
+  background-color: #000;
+}
+.logo {
+  width: 20vh;
+  margin: 0 auto;
+  padding: 0;
+}
+.navbar {
+  background-color: #000;
+  height: 15%;
+}
+.navbar p{
+  color: #fff;
+}
+.nav {
+  padding-left: 30px;
+  padding-top: 30px;
+}
+.nav li a {
+  color: #fff!important;
+  font-size: 16px;
+}
+.nav li a:hover {
+  color: grey!important;
+}
+.jumbotron {
+  background-image: url(http://i65.tinypic.com/nns941.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  height: 100%;
+}
+.jumbotron p {
+  color: #fff;
+  font-size: 100%;
+}
+.jumbotron h2 {
+  color: #fff;
+}
+footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  height: 20%;
+  border-top: 2px solid #fff;
+}
