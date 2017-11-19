@@ -1,0 +1,68 @@
+$color_1: #fff;
+$color_2: grey;
+$font_family_1: Lato;
+$background_color_1: #000;
+
+@import "https://fonts.googleapis.com/css?family=Lato|Roboto";
+* {
+	box-sizing: border-box;
+}
+body {
+	font-family: $font_family_1;
+	padding-top: 70px;
+	background-color: $background_color_1;
+}
+.logo {
+	width: 20vh;
+	margin: 0 auto;
+	padding: 0;
+}
+.navbar {
+	background-color: $background_color_1;
+	height: 15%;
+	p {
+		color: $color_1;
+	}
+}
+.nav {
+	padding-left: 30px;
+	padding-top: 30px;
+	li {
+		a {
+			color: $color_1 !important;
+			font-size: 16px;
+			&:hover {
+				color: $color_2 !important;
+			}
+		}
+	}
+}
+.jumbotron {
+	background-image: url(http://i65.tinypic.com/nns941.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin: 0 auto;
+	height: 100%;
+	p {
+		color: $color_1;
+		font-size: 100%;
+	}
+	h2 {
+		color: $color_1;
+	}
+}
+footer {
+	background-color: $background_color_1;
+	color: $color_1;
+	text-align: center;
+	font-size: 14px;
+	height: 20%;
+	border-top: 2px solid #fff;
+}
+.test {
+	display: flex;
+}
+.test200 {
+	display: flex;
+	flex-wrap: wrap;
+}

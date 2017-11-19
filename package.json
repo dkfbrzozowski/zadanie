@@ -6,9 +6,12 @@
   "scripts": {
     "test": "npm run test:html",
     "test:html": "nu-html-checker *.html",
-    "build": "npm run build:sass && npm run build:autoprefixer && npm run test",
-    "build:sass": "sass --sourcemap=none --update sass:css",
-    "build:autoprefixer": "autoprefixer-cli css/style.css"
+    "build": "npm run build:scss && npm run build:autoprefixer && npm run test",
+    "build:scss": "scss --sourcemap=none --update scss/style.scss:css/style.css",
+    "build:autoprefixer": "autoprefixer-cli css/style.css",
+    "watch": "parallelshell \"npm run watch:scss\" \"npm run watch:autoprefixer\" ",
+    "watch:scss": "scss --watch scss/style.scss:css/style.css",
+    "watch:autoprefixer": "onchange -d 100 css/style.css -- autoprefixer-cli -o css/style.prefixed.css css/style.css"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +21,9 @@
     "browser-sync": "^2.18.13",
     "node-sass": "^4.7.1",
     "nu-html-checker": "^0.1.0",
-    "sass": "^1.0.0-beta.3"
+    "onchange": "^3.2.1",
+    "parallelshell": "^3.0.2",
+    "sass": "^1.0.0-beta.3",
+    "scss": "^0.2.4"
   }
 }
