@@ -1,23 +1,20 @@
 {
   "name": "zadanie",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "npm run test:html",
     "test:html": "nu-html-checker *.html",
     "build": "npm run build:clean && npm run build:scss && npm run build:autoprefixer && npm run test",
-    "build:clean":"rimraf(f, callback)",
-    "build:scss": "scss --sourcemap=none --update scss/style.scss:css/style.css",
+    "build:clean": "rimraf css/*.css",
+    "build:scss": "scss --sourcemap=none --update scss:css",
     "build:autoprefixer": "autoprefixer-cli css/style.css",
-
-    "watch": "parallelshell \"npm run watch:scssprefixer\" \"npm run watch:browsersync\" ",
-    "watch:scssprefixer": "onchange -d 100 css/style.css -- scss --watch scss/style.scss:css/style.css -- autoprefixer-cli -o css/style.prefixed.css css/style.css",
- 
-    "watch:browsersync": "browser-sync start --server --files \"css/*.css\""  
+    "watch": "parallelshell \"npm run watch:scss\" \"npm run watch:browsersync\" ",
+    "watch:scssprefixer": "onchange -d 100 scss/*.scss -- scss --update scss:css -- autoprefixer-cli -o css/style.prefixed.css css/style.css",
+    "watch:browsersync": "browser-sync start --server --files \"css/*.css\" \"*.html\" "
   },
   "keywords": [],
-  "author": "",
+  "author": "Dawid Brzozowski",
   "license": "ISC",
   "dependencies": {
     "autoprefixer-cli": "^1.0.0",
@@ -29,5 +26,18 @@
     "rimraf": "^2.6.2",
     "sass": "^1.0.0-beta.3",
     "scss": "^0.2.4"
-  }
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-latest": "^6.24.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dkfbrzozowski/zadanie.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dkfbrzozowski/zadanie/issues"
+  },
+  "homepage": "https://github.com/dkfbrzozowski/zadanie#readme",
+  "description": ""
 }
